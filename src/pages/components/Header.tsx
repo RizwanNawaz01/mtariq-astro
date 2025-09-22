@@ -30,7 +30,7 @@ export default function Header() {
           <a href="#hero-section"  className="cursor-pointer">
             <img
               src="/logo.svg"  
-              alt="Think 10x and Grow"
+              alt="Think 10x and Grow  "
               width={200}
               height={200}
               className="w-32 lg:w-60" 
