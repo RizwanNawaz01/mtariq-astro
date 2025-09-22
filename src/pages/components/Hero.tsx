@@ -9,7 +9,7 @@ export default function Hero() {
   const ytContainerRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const showLocalVideo = false; // true = local video, false = YouTube
+  const showLocalVideo = true; // true = local video, false = YouTube
 
   // Load YouTube API only if YouTube is used
   useEffect(() => {
