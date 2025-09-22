@@ -49,7 +49,7 @@ export default function Header() {
               href="#contact-section"
               className="bg-yellow-400 text-black px-3 lg:px-5 py-2 lg:py-5 rounded-full font-semibold hover:bg-yellow-500 transition flex text-xs lg:text-base"
             >
-              Contact Us <ChevronRight className="w-5 h-5 text-black" />
+              Contact Us <ChevronRight className="w-4 md:m-5 md:h-5 h-4 text-black" />
             </a>
 
             {/* Hamburger Menu */}

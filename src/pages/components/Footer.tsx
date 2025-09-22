@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       {/* Social Icons Row */} 
-        <div className="max-w-[1400px] mx-auto px-6 py-6 flex justify-between items-center space-x-10">
+        <div className="max-w-full md:max-w-[1400px]  mx-auto px-3 md:px-6  py-6 flex justify-between items-center  space-x-6 md:space-x-10">
       {socials.map(({ name, href, icon: Icon }) => (
         <a key={name} href={href} target="_blank">
           <Icon className="w-6 h-6 hover:text-yellow-400 transition" />
