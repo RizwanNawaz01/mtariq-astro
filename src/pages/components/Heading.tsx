@@ -17,7 +17,7 @@ export default function Heading({
   return (
     <div
       className={clsx(
-        "my-8 text-center max-w-7xl mx-auto px-16", 
+        "my-8 text-center max-w-7xl mx-auto px-4 lg:px-16 ", 
       )}
     >
          {subtitle && (
