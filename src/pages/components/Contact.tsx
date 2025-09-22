@@ -56,7 +56,7 @@ try {
         <Heading title=" Contact us to join the podcast  or suggest a topic" subtitle="Get in touch" custom="1" />
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* First + Last Name */}
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid  grid-cols-2 gap-4">
             <input
               type="text"
               name="firstName"
