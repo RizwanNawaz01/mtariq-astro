@@ -1,16 +1,54 @@
 ---
+import DefaultLayout from "./layouts/DefaultLayout.astro";
+import Hero from "./components/Hero";
+import Heading from "./components/Heading";  
+import MotionFlowSlider from "./components/MotionFlowSlider";  
+import Timeline from "./components/Timeline";
+import Episodes from "./components/Episode";
+import ContactForm from "./components/Contact";
 
+import {  ChevronRight  } from "lucide-react";  
+
+
+import { episodes ,timelines} from "../data/content";
+import { guestSlidesEven,guestSlidesOdd, guestSlides} from "../data/content"; 
+
+const slides = guestSlides && guestSlides.length > 0 ? guestSlides : []
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<DefaultLayout title="Home">
+   <main class="flex min-h-screen flex-col items-center justify-between bg-black">
+    <Hero client:load />
+      {/* Start New Section */}
+      <div  class="w-full max-w-[1400px] mx-auto bg-black py-8 pt-4"  id="about-section">
+        <Heading title="We exist to inspire and equip people to achieve exponential growth, in business, career, and life." subtitle="ABOUT THE PODCAST" />
+        <div class="max-w-3xl mx-auto text-center  ">
+          <p class="text-5xl font-bold mb-2"> {slides.length} </p>
+          <span class="text-2xl ">Total Episodes</span>
+        </div>  
+          <MotionFlowSlider slides={guestSlidesEven} /> 
+          <MotionFlowSlider reverse slides={guestSlidesOdd} /> 
+      </div>
+
+      {/* Start New Section */}
+      <div id="timeline-section" class="w-full max-w-[1400px] mx-auto bg-black py-8 ">
+        <Heading title="Muhammad Tariq" subtitle="About the HOST" />
+        <Timeline timelines={timelines} />    
+        </div>
+
+      {/* Start New Section */}
+      <div id="episodes-section" class="w-full mx-auto bg-white py-8 ">
+        <Heading title="Our latest episodes" subtitle="TUNE IN TO" custom="1" />
+        <Episodes episodes={episodes} />
+        <div class="flex justify-center mt-5 mb-8">
+          <a href="/contact" class="bg-yellow-400 text-black px-5 py-5 rounded-full font-semibold hover:bg-yellow-500 transition flex">
+           Visit YouTube Channel <ChevronRight  className="w-5 h-5 text-black"/>
+		  </a>
+        </div>   
+      </div>
+      {/* Start New Section */} 
+      <div id="form-section" class="w-full mx-auto  bg-yellow-400 p py-8 "> 
+      <ContactForm />
+      </div>
+   </main>
+</DefaultLayout>
